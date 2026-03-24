@@ -272,6 +272,9 @@ h1 {
   border: 1px solid #d1d5db;
   border-radius: 10px;
   font-size: 1rem;
+  background: #fff;
+  color: #111827;
+  color-scheme: light;
 }
 
 .admin-controls button {

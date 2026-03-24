@@ -1,0 +1,1 @@
+-- Kein Seed-Daten für dieses Projekt.

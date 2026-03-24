@@ -93,6 +93,17 @@
         />
       </div>
 
+      <div class="disclaimer">
+        <strong>Einwilligung zur Datenverarbeitung</strong><br />
+        Mit der Nutzung dieser Website und der Übermittlung von Daten erklären Sie sich mit der
+        Verarbeitung Ihrer personenbezogenen Daten zum Zweck der Bearbeitung Ihrer Anfrage bzw. der
+        Nutzung der angebotenen Funktionen einverstanden.<br />
+        Bitte tragen Sie ausschließlich Daten von Personen ein, die zuvor ausdrücklich in die
+        Übermittlung und Verarbeitung ihrer Daten eingewilligt haben.<br />
+        Die Verarbeitung erfolgt ausschließlich im Rahmen der geltenden datenschutzrechtlichen
+        Bestimmungen.
+      </div>
+
       <button type="submit" :disabled="isLoading" class="btn-submit">
         {{ isLoading ? 'Wird gesendet…' : 'Absenden' }}
       </button>
@@ -277,6 +288,8 @@ textarea {
   font-family: inherit;
   box-sizing: border-box;
   background: #fff;
+  color: #111827;
+  color-scheme: light;
 }
 
 select:focus,
@@ -323,6 +336,16 @@ textarea:focus {
   color: #6b7280;
   font-size: 0.8rem;
   margin-top: 0.35rem;
+}
+
+.disclaimer {
+  font-size: 0.82rem;
+  color: #6b7280;
+  line-height: 1.55;
+  padding: 0.75rem 1rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
 }
 
 .btn-submit {

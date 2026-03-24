@@ -96,6 +96,7 @@ const errorMessage = ref('')
 const hasLoaded = ref(false)
 
 const apiUrl = import.meta.env.VITE_SUPABASE_URL
+const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
 const loadSubmissions = async () => {
   if (!apiUrl) {
@@ -114,6 +115,7 @@ const loadSubmissions = async () => {
       {
         headers: {
           Authorization: `Bearer ${adminPin.value}`,
+          apikey: anonKey,
         },
       },
     )
@@ -150,6 +152,7 @@ const deleteSubmission = async (id) => {
         headers: {
           Authorization: `Bearer ${adminPin.value}`,
           'Content-Type': 'application/json',
+          apikey: anonKey,
         },
         body: JSON.stringify({ id }),
       },
@@ -272,9 +275,6 @@ h1 {
   border: 1px solid #d1d5db;
   border-radius: 10px;
   font-size: 1rem;
-  background: #fff;
-  color: #111827;
-  color-scheme: light;
 }
 
 .admin-controls button {

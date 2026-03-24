@@ -114,8 +114,9 @@ const loadSubmissions = async () => {
       `${apiUrl}/functions/v1/get-submissions?action=list`,
       {
         headers: {
-          Authorization: `Bearer ${adminPin.value}`,
+          Authorization: `Bearer ${anonKey}`,
           apikey: anonKey,
+          'X-Admin-Pin': adminPin.value,
         },
       },
     )
@@ -150,9 +151,10 @@ const deleteSubmission = async (id) => {
       {
         method: 'POST',
         headers: {
-          Authorization: `Bearer ${adminPin.value}`,
+          Authorization: `Bearer ${anonKey}`,
           'Content-Type': 'application/json',
           apikey: anonKey,
+          'X-Admin-Pin': adminPin.value,
         },
         body: JSON.stringify({ id }),
       },

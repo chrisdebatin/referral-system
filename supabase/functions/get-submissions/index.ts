@@ -19,8 +19,11 @@ function requireAdminPin(req: Request): Response | null {
   if (!adminPin) {
     return json({ error: "ADMIN_PIN ist nicht gesetzt" }, 500);
   }
+  // Accept PIN from X-Admin-Pin header (preferred) or Authorization Bearer
+  const pinHeader = req.headers.get("X-Admin-Pin");
   const auth = req.headers.get("Authorization") ?? "";
-  const token = auth.replace(/^Bearer\s+/i, "").trim();
+  const bearerToken = auth.replace(/^Bearer\s+/i, "").trim();
+  const token = pinHeader ?? bearerToken;
   if (token !== adminPin) {
     return json({ error: "Unauthorized" }, 401);
   }
